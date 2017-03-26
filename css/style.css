@@ -1,0 +1,102 @@
+img {
+    max-height: 400px;
+    border: 3px solid red;
+    display: block;
+    margin-bottom: 200px;
+}
+
+#t1 {
+    transform: rotate(-20deg);
+}
+
+/* deg - jednostka kąta nachylenia */
+
+#t2 {
+    transform: translate(200px, 200px);
+}
+/* transform: translate(200px, 200px) rotate(-20deg) scale(1.5); */
+
+#t3 {
+    transform: scaleX(2);
+    transform: scaleY(2);
+    transform: scale(.5);
+}
+/* w 'scale' nie podajemy wartości w px tylko sama liczba ;
+w box-model inne obrazki będa miały domyślną wys i szer po skalowaniu */
+
+#t4 {
+    animation-name: stretch;
+    animation-duration: 3s;
+    width: 100%; /* okreslają wysokość obrazek po wykonaniu animacji nie wroci do 600px tylko zostanie w 100% przegladarki */
+}
+
+@keyframes stretch {
+    from {
+        width: 50%;
+    }
+    
+    to {
+        width: 100%;
+    }
+}
+
+#t5 {
+    animation-name: second_stretch;
+    animation-duration: 10s;
+    width: 50%;
+    animation-iteration-count: 2;
+    animation-timing-function: ease;
+    
+}
+
+@keyframes second_stretch {
+    0%, 100% {
+        width: 50%;
+    }
+    50% {
+       width: 100%; 
+    }
+    
+}
+
+.square {
+    width: 400px;
+    height: 400px;
+    border: 2px solid red;
+    position: relative;
+    margin: auto;
+}
+
+.square-2 {
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    bottom: 0;
+    position: absolute;
+    animation-name: stretch;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+}
+
+
+
+@keyframes stretch {
+    0% {
+        transform: translateX(0%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(700%) rotate(45deg);
+    }
+    50% {
+        transform: translate(700%, -700%) rotate(90deg);
+    }
+    75% {
+        transform: translate(0%, -700%) rotate(135deg);
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(180deg);
+    }
+}
+
+
